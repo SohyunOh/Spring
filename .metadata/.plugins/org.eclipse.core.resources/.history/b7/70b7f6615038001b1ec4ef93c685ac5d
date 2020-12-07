@@ -1,0 +1,10 @@
+package ex03.setter;
+
+public class MainClass {
+	
+	public static void MainClass() {
+		DatabaseDev db = new DatabaseDev();
+		db.setUrl("");
+	}
+
+}

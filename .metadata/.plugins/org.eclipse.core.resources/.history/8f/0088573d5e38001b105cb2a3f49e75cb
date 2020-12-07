@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"  
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans  
+http://www.springframework.org/schema/beans/spring-beans.xsd"
+
+>
+
+	<bean class="ex01.SpringText"/>
+	
+	<!-- 호텔, 쉐프 생성자 주입  -->
+	<bean id="chef" class="ex02.construct.Chef"/>
+	<bean id="hotel" class="ex02.construct.Hotel">
+		<constructor-arg ref="chef"/>
+	</bean>
+	
+	<!--dao, databaseDev 세터주입 -->
+	<bean id="db" class="ex03.setter.DatabaseDev">
+		<property name="url" value="bean으로넣은데이터베이스주소"/>
+		<property name="uid" value="bean으로넣은데이터베이스아이디"/>
+		<property name="upw" value="bean으로넣은데이터베이스비번"/>
+	</bean>
+	
+	<bean id="memberDAO" class="ex03.setter.MemberDAO">
+		<property name="ds" ref="db"/>
+	</bean>
+	
+	
+	<!-- 문제 -->
+	
+	<bean id ="bt1" class="ex04.quiz.Battery1"/>
+	<bean id ="bt2" class="ex04.quiz.Battery2"/>
+	
+	<bean id="car" class="ex04.quiz.Car">
+	<constructor-arg ref="bt1"/>
+	</bean>
+	
+	<bean id ="ap" class="ex04.quiz.Airplane">
+	<property name="battery" ref="bt2"></property>
+	</bean>
+	
+
+
+</beans>

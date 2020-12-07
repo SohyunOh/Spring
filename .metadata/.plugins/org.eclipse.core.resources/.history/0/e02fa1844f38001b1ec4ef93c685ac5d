@@ -1,0 +1,9 @@
+package ex03.setter;
+
+public class DatabaseDev {
+	
+	private String url;
+	private String uid;
+	private String upw;
+
+}

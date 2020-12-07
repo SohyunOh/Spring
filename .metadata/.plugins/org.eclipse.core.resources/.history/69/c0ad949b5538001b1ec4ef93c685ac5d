@@ -1,0 +1,7 @@
+package ex04.quiz;
+
+public class IBattery {
+
+	public void energy();
+
+}

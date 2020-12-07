@@ -1,0 +1,12 @@
+package ex01;
+
+public class SpringText {
+
+	public void Test() {
+		
+		System.out.println();
+	
+
+	}
+
+}

@@ -1,0 +1,17 @@
+package ex01;
+
+
+
+public class Mainclass {
+
+	public static void main(String[] args) {
+		
+//		SpringText st = new SpringText();
+//		st.test();
+		
+		GenericApplicationContext ctx
+		= new GenericApplicationContext("application-context.xml");
+
+	}
+
+}
