@@ -2,21 +2,33 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	<!-- 의존객체가 어노테이션 기능을 통해서 자동주입 되도록 해주는 기능  -->
-	<context:annotation-config/>
+    <!-- 의존객체가 어노테이션 기능을 통해서 자동주입니 되도록 해주는 기능 -->
+    <context:annotation-config/>
+
+    <!-- 기존방식
+    <bean id="doc1" class="ex06.autowired.Document"/>
+    <bean id="printer1" class="ex06.autowired.Printer">
+        <constructor-arg ref="doc1"/>
+    </bean> 
+    -->
+
+    <bean id="xxxxx" class="ex06.autowired.Document"/>
+    <bean id="doc2" class="ex06.autowired.Document"/>
+
+    <bean id="printer1" class="ex06.autowired.Printer"/>
+    <bean id="printer2" class="ex06.autowired.Printer2"/>
+
+    <!-- 문제  -->
+    <bean id="moniter" class="ex07.quiz.Moniter"/>
+    <bean id="mouse" class="ex07.quiz.Mouse"/>
+    <bean id="keyboard" class="ex07.quiz.Keyboard"/>
+
+    <bean id="computer" class="ex07.quiz.Computer"/>
 
 
-	<!-- 
-	<bean id="doc1" class="ex06.autowired.Document"/>
-	<bean id="printer1" class="ex06.aytowired.Printer">
-		<constructor-arg ref="doc1"/>
-	</bean> 
-	-->
-	<bean id="doc1" class="ex06.autowired.Document"/>
-	<bean id="printer1" class="ex06.aytowired.Printer"/>
-	
-	 
 </beans>

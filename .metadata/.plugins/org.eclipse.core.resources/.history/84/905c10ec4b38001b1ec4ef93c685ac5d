@@ -1,9 +1,0 @@
-package ex02.construct;
-
-public class Chef {
-	
-	private void cookin() {
-		System.out.println("요리합니다");
-
-	}
-}

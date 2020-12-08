@@ -2,8 +2,9 @@ package ex05.collection;
 
 public class MemberVO {
 
-	public String name;
-	public String id;
+	private String name;
+	private String id;
+	
 	public String getName() {
 		return name;
 	}
@@ -16,7 +17,6 @@ public class MemberVO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	
 	
 	
 }

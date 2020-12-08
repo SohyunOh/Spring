@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <beans xmlns="http://www.springframework.org/schema/beans"  
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans  
 http://www.springframework.org/schema/beans/spring-beans.xsd"
 >
-
-	<!-- 켈렉션 세터주입으로 넣는다 -->
+	
+	<!-- 컬렉션을 setter주입으로 넣는다. -->
 	<bean class="ex05.collection.Custom">
-	<!-- 켈렉션 String 타입 -->
+		<!-- 컬렉션 String타입 -->
 		<property name="lists">
 			<list>
 				<value>홍길동</value>
@@ -17,37 +16,35 @@ http://www.springframework.org/schema/beans/spring-beans.xsd"
 			</list>
 		</property>
 		
-		<!-- 켈렉션  객체 타입 -->
-		<property name="lists">
+		<!-- 컬렉션 객체타입 -->
+		<property name="vo">
 			<list>
 				<bean class="ex05.collection.MemberVO">
-				<property name="name" value="홍길동"/>
-				<property name="id" value="kkk123"></property>
+					<property name="name" value="홍길동" />
+					<property name="id" value="kkk123" />
 				</bean>
 				<bean class="ex05.collection.MemberVO">
-				<property name="name" value="이순신"/>
-				<property name="id" value="aaa123"></property>
-				</bean>
+					<property name="name" value="이순신" />
+					<property name="id" value="aaa123" />
+				</bean>				
 			</list>
 		</property>
 		
-		<!-- 컬랙션 맵 타입 -->
-        <property name="maps">
-            <map>
-                <entry key="k1" value="홍길동"/>
-                <entry key="k2">
-                    <bean class="ex05.collection.MemberVO">
-                        <property name="name" value="홍길동"/>
-                        <property name="id" value="kkk123"/>
-                    </bean>
-                </entry>
-            </map>
-        </property>
-		
-		
-		
+		<!-- 컬렉션 맵 타입 -->
+		<property name="maps">
+			<map>
+				<entry key="k1" value="홍길동" />				
+				<entry key="k2">
+					<bean class="ex05.collection.MemberVO">
+						<property name="name" value="홍길동" />
+						<property name="id" value="kkk123" />
+					</bean>
+				</entry>
+			</map>
+		</property>		
 		
 	</bean>
-
+	
+	
 
 </beans>

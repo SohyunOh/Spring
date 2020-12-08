@@ -6,8 +6,7 @@ public class DatabaseDev {
 	private String uid;
 	private String upw;
 	
-	
-	//게터셋터
+	//게터, 세터
 	public String getUrl() {
 		return url;
 	}
@@ -26,7 +25,6 @@ public class DatabaseDev {
 	public void setUpw(String upw) {
 		this.upw = upw;
 	}
-	
-	
 
+	
 }

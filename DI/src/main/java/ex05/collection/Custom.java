@@ -5,10 +5,12 @@ import java.util.Map;
 
 public class Custom {
 
-	//멤버 변수로 켈렉션 타입
+	//멤버변수로 컬렉션 타입
 	private List<String> lists;
 	private List<MemberVO> vo;
 	private Map<String, Object> maps;
+	
+	//getter, setter
 	public List<String> getLists() {
 		return lists;
 	}
@@ -27,9 +29,7 @@ public class Custom {
 	public void setMaps(Map<String, Object> maps) {
 		this.maps = maps;
 	}
-	
-	
-	
+
 	
 	
 	

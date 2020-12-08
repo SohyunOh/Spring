@@ -1,8 +1,8 @@
 package ex04.quiz;
 
 public class Car {
-	
-	private IBattery battery; //모든 건전지를 받을 수 잇도록
+
+	private IBattery battery; //모든 건전지를 받을 수 있도록
 	
 	//생성자 주입
 	public Car(IBattery battery) {
@@ -13,4 +13,5 @@ public class Car {
 	public IBattery getBattery() {
 		return battery;
 	}
+	
 }

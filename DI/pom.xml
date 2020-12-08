@@ -3,8 +3,11 @@
   <groupId>spring5</groupId>
   <artifactId>DI</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <!-- 네크워크 상에서 라이브러리를 편리하게 받을 수 있도록 선언하는 곳 -->
-  	<dependencies>
+  	
+  	
+  	<!-- 네트워크상의 라이브러리를 편리하게 받을 수 있도록 선언하는 곳 -->
+  	
+    <dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -25,7 +28,7 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+  
   
   
 </project>

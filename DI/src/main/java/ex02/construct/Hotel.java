@@ -1,8 +1,8 @@
 package ex02.construct;
 
 public class Hotel {
-	
-	//맴버변수
+
+	//멤버변수
 	private Chef chef;
 	
 	//생성자
@@ -15,5 +15,4 @@ public class Hotel {
 	}
 	
 	
-
 }
