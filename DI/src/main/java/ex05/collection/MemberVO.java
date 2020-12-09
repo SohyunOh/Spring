@@ -5,6 +5,8 @@ public class MemberVO {
 	private String name;
 	private String id;
 	
+	
+	//게터셋터
 	public String getName() {
 		return name;
 	}

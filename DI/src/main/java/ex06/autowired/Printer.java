@@ -26,7 +26,7 @@ public class Printer {
 	//기본생성자
 	public Printer() {}
 	
-	//생성자
+	//생성자 -- 유징필드 활용
 	public Printer(Document document) {
 		super();
 		this.document = document;

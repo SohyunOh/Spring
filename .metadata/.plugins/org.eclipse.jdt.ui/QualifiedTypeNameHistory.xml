@@ -4,7 +4,6 @@
 <fullyQualifiedTypeName name="ex07.quiz.Mouse"/>
 <fullyQualifiedTypeName name="ex07.quiz.Monitor"/>
 <fullyQualifiedTypeName name="ex07.quiz.Keyboard"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
 <fullyQualifiedTypeName name="javax.annotation.Resource"/>
 <fullyQualifiedTypeName name="ex07.quiz.MainClass"/>
@@ -25,4 +24,5 @@
 <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
 <fullyQualifiedTypeName name="com.simple.controller.MainController"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 </qualifiedTypeNameHistroy>
