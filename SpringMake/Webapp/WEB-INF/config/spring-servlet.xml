@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  
+   xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:mvc="http://www.springframework.org/schema/mvc"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+   
+   <!--1.핸들러맵핑 2.핸들러 어댑터 3.mvc에서 사용하는 어노테이션까지 제공(하는 클레스)  -->
+   <mvc:annotation-driven/>
+   
+   <!-- 해당 패키지의 경로를 읽어서 @Controller가 붙어있는 bean클래스를 빈으로 생성해줍니다. -->
+   <context:component-scan base-package="com.simple.controller"/>
+   
+   <!-- 뷰 합성기(뷰리졸버) -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+   
+   <!-- 정적자원 맵핑,js,css, html.img 파일에 대해서 컨트롤러를 거치지 않고 곧바로 보여주도록 설정 -->
+   <mvc:resources location="/resource/" mapping="/resource/**" />
+   
+</beans>
