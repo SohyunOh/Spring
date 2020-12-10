@@ -12,21 +12,19 @@ public class Computer {
 	
 	@Autowired
 	@Qualifier("mouse")
-	private Mouse mouse ;
+	private Mouse mouse;
 	
 	@Autowired
 	@Qualifier("monitor")
-	private Monitor monitor ;
+	private Monitor monitor;
 	
-
 	@Resource(name = "keyboard")
 	private Keyboard keyboard;
 
-	public void ComouterInfo() {
-		
+	public void ComputerInfo() {
 		mouse.info();
 		monitor.info();
-		keyboard .info();
+		keyboard.info();
 	} 
 	
 	

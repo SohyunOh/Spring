@@ -11,7 +11,7 @@ public class MainClass {
 					new GenericXmlApplicationContext("autowired-context.xml");
 			
 			Computer com = ctx.getBean(Computer.class);
-			com.ComouterInfo();
+			com.ComputerInfo();
 			
 			
 			

@@ -24,7 +24,7 @@
     <bean id="printer2" class="ex06.autowired.Printer2"/>
 
     <!-- 문제  -->
-    <bean id="moniter" class="ex07.quiz.Moniter"/>
+    <bean id="monitor" class="ex07.quiz.Monitor"/>
     <bean id="mouse" class="ex07.quiz.Mouse"/>
     <bean id="keyboard" class="ex07.quiz.Keyboard"/>
 
