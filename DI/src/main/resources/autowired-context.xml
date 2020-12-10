@@ -17,7 +17,7 @@
     </bean> 
     -->
 
-    <bean id="xxxxx" class="ex06.autowired.Document"/>
+    <bean id="xxxxxx" class="ex06.autowired.Document"/>
     <bean id="doc2" class="ex06.autowired.Document"/>
 
     <bean id="printer1" class="ex06.autowired.Printer"/>

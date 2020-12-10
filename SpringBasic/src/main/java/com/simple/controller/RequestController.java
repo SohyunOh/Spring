@@ -107,24 +107,35 @@ public class RequestController {
 	
 	
 	
-	//==================
+	//==============문제===================
 	
 	//req_quiz01화면처리
-	@RequestMapping("req_quiz01")
+	@RequestMapping("req_quiz01")//들어오는 요청  -  request/req_quiz01 -로그인 창
 	public String req_quiz01() {
-		return "request/req_quiz01";
+		return "request/req_quiz01"; // 화면으로 내보내는 요청   -- view/request/req_quiz01
 	}
 	
 	
+//	@RequestMapping(value = "/login", method = RequestMethod.POST)
+//	public String login(@RequestParam("id") String id,
+//						@RequestParam("pw") String pw
+//						) {
+//		
+//		if(id.equals("abc123") &&  pw.equals("xxx123")) {
+//			return "request/req_quiz01_ok";
+//		}else {			
+//			return "request/req_quiz01_no";
+//		}
+//		
+//	}
+	
+	//메소드 먼저 쓰고 어노테이션 붙여주기
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(@RequestParam("id") String id,
-						@RequestParam("pw") String pw
-						) {
-		
-		if(id.equals("abc123") &&  pw.equals("xxx123")) {
-			return "request/req_quiz01_ok";
+	public String login(ReqVO vo) {
+		if(vo.getId().equals("abc123") && vo.getPw().equals("xxx123")) {
+			return "request/req_quiz01_ok"; // 성공
 		}else {			
-			return "request/req_quiz01_no";
+			return "request/req_quiz01_no";// 실패
 		}
 		
 	}

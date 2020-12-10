@@ -23,7 +23,9 @@
 	
 	<!-- @Controller, @Componenet, @Repository, @Service 어노테이션이 부착되있는 클래스를 bean으로 생성합니다. -->
 	<context:component-scan base-package="com.simple.controller" />
-	
-	
+	<context:component-scan base-package="com.simple.service" />
+	<context:component-scan base-package="com.simple.dao" />
+	<!-- 서비스 클래스를  bean으로 생성 -->
+	<!-- <beans:bean id = "service" class="com.simple.service.ScoreServiceImpl"/> -->
 	
 </beans:beans>
