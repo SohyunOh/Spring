@@ -12,7 +12,7 @@
 	<!-- 1. 핸들러 어댑터, 핸들러맵핑 관련 작업을 내부적으로 처리. mvc에서 제공하는 어노테이션을 사용하도록 해줍니다. -->
 	<annotation-driven />
 
-	<!-- 정적파일 맵핑 설정 -->
+	<!-- 정적파일 맵핑 설정 -->	
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- 뷰 합성기 -->
@@ -21,11 +21,15 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<!-- @Controller, @Componenet, @Repository, @Service 어노테이션이 부착되있는 클래스를 bean으로 생성합니다. -->
+	<!-- @Controller, @Componenet, @Repository, @Service 어노테이션이 부착되있는 클래스를 bean으로 생성합니다. ★ -->
 	<context:component-scan base-package="com.simple.controller" />
 	<context:component-scan base-package="com.simple.service" />
 	<context:component-scan base-package="com.simple.dao" />
-	<!-- 서비스 클래스를  bean으로 생성 -->
-	<!-- <beans:bean id = "service" class="com.simple.service.ScoreServiceImpl"/> -->
+	
+	
+	<!-- 서비스 클래스를 bean으로 생성 -->
+	<!-- 
+	<beans:bean id="service" class="com.simple.service.ScoreServiceImpl" />
+	 -->
 	
 </beans:beans>

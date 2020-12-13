@@ -6,7 +6,7 @@ import com.simple.command.ScoreVO;
 
 public interface ScoreDAO {
 	
-	public void scoreRegist(ScoreVO vo); //등록 메서드
-	public ArrayList<ScoreVO> getlist(); 
-
+	public void scoreRegist(ScoreVO vo); //등록
+	public ArrayList<ScoreVO> getList(); //목록
+	public void scoreDelete(int index); //삭제
 }

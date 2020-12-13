@@ -2,7 +2,30 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
-	
-	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+
+	<!-- 데이터베이스 관련작업(디스패쳐서블릿 이전에 만들어지는 bean) -->
+	<!-- 1. namespace에서 jdbc만 추가 -->
+
+	<!-- 히카리 설정파일 빈 -->
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName"
+			value="oracle.jdbc.OracleDriver" />
+		<property name="jdbcUrl"
+			value="jdbc:oracle:thin:@localhost:1521/XEPDB1" /><!-- 엔드포인트 :xe (11g) 
+			/XEPDB1 (18c) -->
+		<property name="username" value="SPRING" />
+		<property name="password" value="SPRING" />
+	</bean>
+
+	<!-- 히카리 풀(위에 설정파일을 주입) -->
+	<bean id="ds" class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg ref="hikariConfig" />
+	</bean>
+
+	<!-- 스프링에서 제공하는 스프링JDBCTemplate객체 -->
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="ds" />
+	</bean>
+
 </beans>

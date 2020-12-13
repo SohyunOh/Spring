@@ -8,19 +8,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
-	<h2>점수결과 확인</h2>
 	
-	<c:forEach var="i" items="${list}">
-		이름: ${i.name }
-		국어: ${i.kor }
-		영어: ${i.eng }
-		수학: ${i.math }
-		<br>
+	<h2>점수 결과 확인</h2>
+	
+	<c:forEach var="vo" items="${list }" varStatus="num"> <!-- var변수의 상태 -->
+		번호:${vo.num }
+		이름:${vo.name }
+		국어:${vo.kor }
+		영어:${vo.eng }
+		수학:${vo.math }
+		<button type="button" onclick="location.href='scoreDelete?num=${vo.num }' ">점수삭제</button>
+		<br/>
 	</c:forEach>
 	
+	<a href="scoreRegist">점수추가 등록</a>
 	
+
 	
+	 
 </body>
 </html>

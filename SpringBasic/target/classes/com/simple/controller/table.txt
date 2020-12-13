@@ -1,0 +1,19 @@
+create table score(
+    num number(10),
+    name varchar2(30),
+    kor varchar2(30),
+    eng varchar2(30),
+    math varchar2(30)
+);
+alter table score add constraint score_pk primary key (num);
+create sequence score_seq start with 1 increment by 1 nocache;
+
+create table board(
+    num number(10),
+    name varchar2(50),
+    title varchar2(50),
+    content varchar2(50)
+);
+alter table board add CONSTRAINT board_pk primary key (num);
+create SEQUENCE board_seq start with 1 INCREMENT by 1 nocache;
+====================================================================
