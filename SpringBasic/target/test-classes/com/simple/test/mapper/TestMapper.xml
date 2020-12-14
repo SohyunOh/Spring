@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <!-- dtd라는 파일을 참조하는 마이바티스 문서라는 것을 선언 -->
+ 
+ <!-- namespace 속성에 참조할 인터페이스 위치를 정확하게 기술 -->
+ <mapper namespace="com.simple.test.mapper.TestMapper"> 
+ 
+ 	<!-- id 속성에는 참조할 인터페이스의 추상메서드 이름 -->
+ 	<!-- select문은  resultType을 반드시 명시 -sql 문의 실행결과를 반환할 타입-->
+ 	<!-- ;은 적지 않습니다 -->
+ 	<select id="getTime" resultType="String">
+ 		select sysdate from dual
+ 	</select>
+ 	
+ 	<!-- vo의 setter 매서드의 set을 제외한 이름을  #{이름} 전달하면 됩니다.-->
+ 	<insert id="insert">
+ 		insert into board(num, name, title, content) 
+ 		values(board_seq.nextval, #{name}, #{title}, #{content})
+ 	</insert>
+ 	
+ 	<select id="getList" resultType="com.simple.command.BoardVO">
+ 		SELECT * FROM board 
+ 	</select>
+ 
+ 	
+ 	<select id="getListOne" resultType="com.simple.command.BoardVO">
+ 		SELECT * FROM board where num = #{num}
+ 	</select>
+ 	
+ 	<select id="getListTwo" resultType="com.simple.command.BoardVO">
+ 	SELECT * FROM board where name LIKE '%'||#{xxx}||'%' and title = #{yyy}
+ 	</select>
+ 	
+ 	<update id="update">
+ 		update board set title = #{title}, content = #{content} where num = #{num}
+ 	</update>
+ 	
+ 	<delete id="delete">
+ 		DELETE FROM board WHERE num = #{num}
+ 	</delete>
+ 	<delete id="deleteTow">
+ 		DELETE FROM board WHERE num = #{num}
+ 	</delete>
+ 
+ </mapper>

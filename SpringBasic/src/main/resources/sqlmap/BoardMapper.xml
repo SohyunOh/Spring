@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- dtd 라는 파일을 참조하는 마이바티스 문서라는 것을 선언 -->
+	<mapper namespace="com.simple.mapper.BoardMapper">
+	<insert id="boardRegist">
+		insert into board values(board_seq.nextval, #{name}, #{title}, #{content})
+	</insert>
+
+	<!-- 마이바티스 설정에 alias 가 있다면 단축이름으로 사용이 가능 -->
+	<select id="getList" resultType="BoardVO">
+		select * from board
+	</select>
+
+
+	<delete id="boardDelete">
+		delete from board where num = #{num}
+	</delete>
+
+
+</mapper>
