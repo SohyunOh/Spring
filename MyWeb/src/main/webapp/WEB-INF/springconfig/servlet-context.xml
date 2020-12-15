@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+<beans:beans
+	xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -7,23 +8,47 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-	
+
 	<!-- 1. 핸들러 어댑터, 핸들러맵핑 관련 작업을 내부적으로 처리. mvc에서 제공하는 어노테이션을 사용하도록 해줍니다. -->
 	<annotation-driven />
 
 	<!-- 정적파일 맵핑 설정 -->
 	<resources mapping="/resources/**" location="/resources/" />
 
-	<!-- 뷰 합성기 -->
-	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<!-- 타일즈 설정 -->
+	<beans:bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<beans:property name="definitions">
+			<beans:list>
+				<beans:value>/WEB-INF/tiles/tiles.xml</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
+
+	<!-- 타일즈 설정 -->
+	<!-- 2가지 이상의 뷰 리졸버를 설정하려면 UrlBasedViewResolver를 사용합니다 (순서를 지정) -->
+	<beans:bean
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<beans:property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles3.TilesView" />
+		<beans:property name="order" value="1" /> <!-- 첫번째 동작 -->
+	</beans:bean>
+
+	<!-- 기본에 존재하는 뷰리졸버(뷰 합성기) -->
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
+		<beans:property name="order" value="2" /> <!-- 두번째 동작 -->
 	</beans:bean>
-	
-	<!-- @Controller, @Componenet, @Repository, @Service 어노테이션이 부착되있는 클래스를 bean으로 생성합니다. ★ -->
-	<context:component-scan base-package="com.team404.myweb" />
-	
-	
-	
-	
+
+	<!-- @Controller, @Componenet, @Repository, @Service 어노테이션이 부착되있는 클래스를 bean으로 
+		생성합니다. ★ -->
+	<context:component-scan
+		base-package="com.team404.controller" />
+
+
+
+
 </beans:beans>

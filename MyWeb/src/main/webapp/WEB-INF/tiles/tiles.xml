@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+  "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<!-- 타일즈 문서 선언 -->
+<tiles-definitions>
+
+	<!-- 1.타일즈 파일이 가져야 하는 layout을 정의 (단, 공통 화면  */*  보다 위에 위치해야합니다.)-->
+	<!--template 은 실제 파일 명 -->
+	<definition name="baseDefault" template="/WEB-INF/tiles/templateDefault.jsp"> 
+		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
+		<put-attribute name="body" value="" />
+	</definition>
+	<!-- baseDefault를 상속받고, 동적 화면으로 구성 -->
+	<!-- name 값을 controller에서 돌아오는 return값 -->
+	<definition name="user/*" extends="baseDefault">
+		<put-attribute name="body" value="/WEB-INF/views/user/{1}.jsp" />
+	</definition>
+	
+	
+	<!-- 2. 공통화면 맵핑 -->
+	<definition name="base" template="/WEB-INF/tiles/template.jsp">
+		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp" />
+	</definition>
+	
+	<!-- controll에서 home으로 돌아오면 타일즈 탬플릿의  home.jsp 로 맵핑 -->
+	<definition name="*" extends="base">
+		<put-attribute name="body" value="/WEB-INF/views/{1}.jsp" />
+	</definition>
+	<definition name="*/*" extends="base">
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+	<definition name="*/*/*" extends="base">
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+	</definition>
+	
+	<!-- 3.공통모듈로 사용하지 않고, 직접 맵핑형태로 사용하는 경우 -->
+	<definition name="aaa" template="/WEB-INF/views/aaa.jsp"/>
+	<definition name="test/bbb" template="/WEB-INF/views/test/bbb.jsp"/>
+	
+
+</tiles-definitions>

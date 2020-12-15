@@ -1,4 +1,4 @@
-package com.team404.myweb;
+package com.team404.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -19,21 +19,23 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	public String home() {
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
+		// 메인화면 가져갈 데이터가 있으며느 Model에 담아서 처리
 		return "home";
+	}
+	
+	@RequestMapping("/aaa")
+	public String aaa() {
+		
+		return "aaa";
+	}
+	
+	@RequestMapping("/test/bbb")
+	public String bbb() {
+		
+		return "test/bbb";
 	}
 	
 }
