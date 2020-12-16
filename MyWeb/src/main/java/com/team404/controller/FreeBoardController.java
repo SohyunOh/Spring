@@ -78,7 +78,7 @@ public class FreeBoardController {
 	//			return "freeBoard/freeModify";
 	//		}
 
-	//글수정 글상세 코드가 같아서 하나로 묶음.
+	//글수정 글상세의 기능이 같아서 하나로 묶음.
 	@RequestMapping(value={"/freeModify", "/freeDetail"}, method = RequestMethod.GET)
 	public void freeModify(@RequestParam("bno") int bno,
 			Model model) {
