@@ -1,6 +1,8 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-      <%@ include file="../include/header.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
     <section>
         <div class="container-fluid">
             <div class="row">
@@ -36,27 +38,20 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <c:forEach var="vo" items="${list }">
                             <tr>
-                                <td>1</td>
-                                <td><a href="##">첫글</a></td>
-                                <td>홍길순</td>
-                                <td>~~~~~</td>
-                                <td>~~~~~</td>
+                                <td>${vo.bno }</td>
+                                <td><a href="freeDetail?bno=${vo.bno }">${vo.title }</a></td>
+                                <td>${vo.writer }</td>
+                                <td>
+                                <fmt:formatDate value="${vo.regdate }" pattern="yyy년 MM월 dd일  hh시 mm분 ss초"/> 
+                                </td>
+                                <td>
+                                <fmt:formatDate value="${vo.updatedate }" pattern="yyy년 MM월 dd일  hh시 mm분 "/>
+                                </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><a href="##">두글</a></td>
-                                <td>홍길순</td>
-                                <td>~~~~~</td>
-                                <td>~~~~~</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><a href="##">세글</a></td>
-                                <td>홍길순</td>
-                                <td>~~~~~</td>
-                                <td>~~~~~</td>
-                            </tr>
+                            </c:forEach>
+                           
                         </tbody>
                         
                     </table>
@@ -75,7 +70,7 @@
                         <li><a href="#">5</a></li>
                         <li><a href="#">다음</a></li>
                     </ul>
-                    <button type="button" class="btn btn-info">글쓰기</button>
+                    <button type="button" class="btn btn-info" onclick="location.href='freeRegist'">글쓰기</button>
                     </div>
 		    </form>
 
@@ -84,5 +79,21 @@
         </div>
 	</section>
 
-<%@ include file="../include/footer.jsp" %>
-
+<script type="text/javascript">
+	window.onload = function () {
+		//state 현재 브라우저의 상태값
+		if(history.state === '') return;
+		
+		var msg = "${msg}";// 컨트롤러레서 넘어온 메시지
+		if(msg != ''){			
+		alert(msg);
+		//replaceState 페이지를 갈라끼움
+		//브라우저의 기록을 새롭게 변경(데이터, 페이지 제목, 변경할 주소(url))
+		//이렇게 변경된 기록정보는  replaceState 객체를 통해서 확인이 가능합니다.
+		history.replaceState('', null, null );
+		
+		}
+		
+		
+	}
+</script>

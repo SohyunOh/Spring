@@ -1,0 +1,12 @@
+===========게시글 테이블 ================
+CREATE TABLE freeboard(
+    bno number(10) ,
+    title VARCHAR2(200) not null,
+    writer VARCHAR2(50) NOT NULL,
+    content VARCHAR2(2000),
+    regdate date DEFAULT sysdate,
+    updatedate date DEFAULT sysdate
+);
+
+alter table freeboard add CONSTRAINT freeboard_pk PRIMARY KEY (bno);
+create SEQUENCE freeboard_seq INCREMENT BY 1 START WITH 1 NOCACHE;

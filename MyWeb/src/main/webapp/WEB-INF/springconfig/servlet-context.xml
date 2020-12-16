@@ -25,7 +25,6 @@
 		</beans:property>
 	</beans:bean>
 
-
 	<!-- 타일즈 설정 -->
 	<!-- 2가지 이상의 뷰 리졸버를 설정하려면 UrlBasedViewResolver를 사용합니다 (순서를 지정) -->
 	<beans:bean
@@ -45,10 +44,17 @@
 
 	<!-- @Controller, @Componenet, @Repository, @Service 어노테이션이 부착되있는 클래스를 bean으로 
 		생성합니다. ★ -->
-	<context:component-scan
-		base-package="com.team404.controller" />
-
-
-
+	<!-- 
+	<context:component-scan	base-package="com.team404.controller" />
+	<context:component-scan	base-package="com.team404.freeboard.service" />
+	 -->
+	 
+	 <!-- 모든 패키지 읽기  -->
+	 <!--include(포함)는 해당  어노테이션만 읽도로고 추가 exclude는 해당 어노테이션을 제외, expression에는 어노테이션의 타입-->
+	<context:component-scan	base-package="com.team404.*">
+		<context:include-filter type="annotation" expression="import org.springframework.stereotype.Controller;"/>
+		<context:include-filter type="annotation" expression="import org.springframework.stereotype.Service;"/>
+		<context:include-filter type="annotation" expression="import org.springframework.stereotype.Repository;"/>
+	</context:component-scan>
 
 </beans:beans>

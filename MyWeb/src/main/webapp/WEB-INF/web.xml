@@ -4,13 +4,13 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
 	<!-- 스프링이 가동되면서 가장 처음 설정파일로 등록 (DB관련 설정이나, 외부 설정) -->
-	<context-param>
+<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/springconfig/DB-context.xml</param-value>
 	</context-param>
 	
 	<!-- 스프링이 시작되면서 리스너가 동작하고 위에 선언된 DB-context.xml이 가장 첫번째로 실행됨 -->
-	<listener>
+<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
@@ -32,6 +32,7 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
+	<!-- 에러처리 or 한글처리 -->
 	<!-- 스프링한글처리 - 스프링에서 제공하는 필터클래스를 사용합니다 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
@@ -52,9 +53,6 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	
-	<!-- 에러처리 -->
-	
-	
+		
 
 </web-app>

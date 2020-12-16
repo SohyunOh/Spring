@@ -47,18 +47,18 @@
 	<bean  id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="ds"/>
 		<!-- 마이바티스 의 구현체 mapper 을 묶어서 관리하기 위한 경로 설정 -->
-		 <!-- 
+		
 		 <property name="mapperLocations" value="classpath:/sqlmap/*.xml"/>
-		  -->
+	
 		 <!-- 마이바티스의 부가적인 설정파일 위치 -->
 		 <property name="configLocation" value="classpath:/mybatis-config/mybatis-config.xml"/>
 
 	</bean>
 	
-	<!-- '맵퍼' 인터페이스의 경로를 지정 -->
-	<!-- 
-	<mybatis-spring:scan base-package="com.team404.myweb"/>  
-	-->
+	<!-- '맵퍼'스캔 명령으로 인터페이스의 경로를 지정 -->
+
+	<mybatis-spring:scan base-package="com.team404.*.mapper"/>  
+
 	
 	
 	 
