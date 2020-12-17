@@ -35,8 +35,6 @@
 		          	<otherwise></otherwise>
 		          </choose>
 		           -->
-
-		  
 		  <![CDATA[         
 		          order by bno desc) a
 		      )

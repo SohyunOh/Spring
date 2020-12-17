@@ -97,7 +97,7 @@
                     	<c:if test="${pageVO.prev}">
                         <li>
                         		<!-- href="#"은 a태그가 이동이 없고  클릭용으로 사용하기 위한 것 -->
-                         		<!-- 데이터 셋 으로 값 주기 = 제이슨 방식 "객체 '키': '값' " -> 힌든으로 넘겨줄것 이기에 단일값만 보내주기로 수정  -->
+                         		<!-- 데이터 셋 으로 값 주기 = 제이슨 방식 "객체 '키': '값' " -> 히든으로 넘겨줄것 이기에 단일값만 보내주기로 수정  -->
                         	<a href="#" data-page="${pageVO.startPage-1 }">이전</a>
                         </li>                    	
                     	</c:if>
@@ -132,7 +132,6 @@
 	
 	
 	<script>
-
 	//페이저
 	/*  
 		1. 페이지네이션을  a-> form태그로 변경
@@ -141,7 +140,7 @@
 		4. sql 문을 동적 쿼리로 변경
 	*/
 	//이벤트 위임방식으로 페이지네이션에 a태그에 이벤트를 전파
-/* 	var pagination = document.querySelector(".pagination");
+ 	var pagination = document.querySelector(".pagination");
 	pagination.onclick = function(){
 		// a태그의 고유이벤트를 막는다
 		event.preventDefault(); //고유이벤트 중단
@@ -152,11 +151,8 @@
 		
 		document.pageForm.submit(); //폼값 서브밋
 	}
- */
-		
-	
-	
-	
+ 
+
 		window.onload = function() {
 			 if(history.state === '' ) return;
 			 
