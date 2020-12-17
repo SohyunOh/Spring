@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
-<fullyQualifiedTypeName name="com.simple.command.ReqVO"/>
-<fullyQualifiedTypeName name="org.springframework.ui.ModelMap"/>
-<fullyQualifiedTypeName name="javax.xml.ws.RequestWrapper"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
 <fullyQualifiedTypeName name="com.simple.command.Quiz01VO"/>
 <fullyQualifiedTypeName name="org.springframework.validation.BindingResult"/>
 <fullyQualifiedTypeName name="java.util.Locale"/>
 <fullyQualifiedTypeName name="java.security.Provider.Service"/>
 <fullyQualifiedTypeName name="com.simple.service.ScoreServiceImpl"/>
-<fullyQualifiedTypeName name="javax.annotation.Resource"/>
 <fullyQualifiedTypeName name="com.simple.dao.ScoreDAO"/>
 <fullyQualifiedTypeName name="com.simple.command.ScoreVO"/>
 <fullyQualifiedTypeName name="com.simple.service.BoardService"/>
@@ -29,7 +23,6 @@
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Param"/>
-<fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="com.simple.command.BoardVO"/>
 <fullyQualifiedTypeName name="com.simple.mapper.scoreMapper"/>
 <fullyQualifiedTypeName name="com.simple.mapper.BoardMapper"/>
@@ -40,7 +33,6 @@
 <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
 <fullyQualifiedTypeName name="org.apache.velocity.app.event.ReferenceInsertionEventHandler.referenceInsertExecutor"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
-<fullyQualifiedTypeName name="lombok.Data"/>
 <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
 <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
@@ -48,16 +40,24 @@
 <fullyQualifiedTypeName name="com.team404.freeboard.dao.FreeBoardDao"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="com.team404.freeboard.mapper.FreeBoardMapper"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
 <fullyQualifiedTypeName name="oracle.net.aso.m"/>
 <fullyQualifiedTypeName name="com.team404.freeboard.service.FreeBoardService"/>
-<fullyQualifiedTypeName name="com.team404.command.FreeBoardVO"/>
 <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.support.RedirectAttributes"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.PUBLIC_MEMBER"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="com.team404.test.mapper.TestMapper"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="oracle.net.aso.l"/>
+<fullyQualifiedTypeName name="com.team404.command.util.Criteria"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.team404.command.FreeBoardVO"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="javax.annotation.Resource"/>
+<fullyQualifiedTypeName name="com.team404.common.util.Criteria"/>
+<fullyQualifiedTypeName name="lombok.Data"/>
+<fullyQualifiedTypeName name="com.team404.common.util.PageVO"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

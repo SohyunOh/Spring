@@ -1,8 +1,7 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-
     <section>
         <div class="container">
             <div class="row">
@@ -14,7 +13,7 @@
                         <form>
                             <div>
                                 <label>DATE</label>
-                                <p><fmt:formatDate value="${vo.regdate}" pattern="yyyy년 MM월 dd일"/></p>
+                                <p><fmt:formatDate value="${vo.regdate }" pattern="yyyy년MM월dd일"/> </p>
                             </div>   
                             <div class="form-group">
                                 <label>번호</label>
@@ -34,9 +33,9 @@
                                 <textarea class="form-control" rows="10" name='content' readonly>${vo.content }</textarea>
                             </div>
 
-                            <button type="button" class="btn btn-primary" onclick="location.href='freeModify?bno=${vo.bno}'">변경</button>
-                            <button type="button" class="btn btn-dark" onclick="location.href='freeList'">목록</button>
-                    </form>
+                            <button type="button" class="btn btn-primary" onclick="location.href='freeModify?bno=${vo.bno}' " >변경</button>
+                            <button type="button" class="btn btn-dark" onclick="location.href='freeList' ">목록</button>
+                    	</form>
                 </div>
             </div>
         </div>
@@ -113,3 +112,5 @@
 			</div>
 		</div>
 	</div>
+
+

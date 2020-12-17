@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	bbb 파일입니다.
-
+	bbb파일 확인~~
 </body>
 </html>

@@ -13,8 +13,8 @@ public class UserController {
 	}
 	
 	@RequestMapping("/userLogin")
-	public String uuserLogin() {
+	public String userLogin() {
 		return "user/userLogin";
 	}
-
+	
 }

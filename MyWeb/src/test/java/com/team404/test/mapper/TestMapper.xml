@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.team404.test.mapper.TestMapper">
+	
+	<insert id="insertTest">
+		insert into FREEBOARD(bno, title, writer, content)
+		values (FREEBOARD_SEQ.nextval, #{title}, #{writer}, #{content})
+	</insert>
+	
+	<!-- CDATA는 XML문서에서 부등호를 사용할때 문자열 그대로 인식되도록 하기 위해서 사용합니다.-->
+	<select id="selectTest" resultType="FreeBoardVO">
+		<![CDATA[  
+		select *
+		from (
+		    select rownum as rn,
+		           a.*
+		    from (select *
+		          from FREEBOARD
+		          order by bno desc) a
+		      )
+		where rn > (#{pageNum}-1) * #{amount} and rn <= #{pageNum} * #{amount}
+		]]>
+	</select>
+	
+	
+</mapper>

@@ -16,7 +16,6 @@
 			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
 			<item value="org.eclipse.jst.ws.ui.new"/>
 			<item value="org.eclipse.wst.XMLCategory"/>
-			<item value="org.eclipse.ui.Examples"/>
 		</list>
 	</section>
 	<section name="InstallationDialogSettings">
@@ -30,6 +29,7 @@
 		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="true"/>
 		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
 		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\612th\Desktop\MyWeb(1216-17).zip"/>
 			<item value="C:\Users\612th\Desktop\MyWeb(Lombok).zip"/>
 			<item value="C:\Users\612th\Desktop\MyWeb(초기세팅).zip"/>
 			<item value="C:\Users\612th\Desktop\201209.zip"/>

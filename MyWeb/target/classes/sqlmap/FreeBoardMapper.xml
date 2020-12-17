@@ -1,38 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- dtd라는 파일을 참조하는 마이바티스 문서라는 것을 선언 -->
 
-<!-- dtd 라는 파일을 참조하는 마이바티스 문서라는 것을 선언 -->
-<!-- 구현체 클래스의 위치 -->
+<!-- 구현 클래스의 위치 -->
 <mapper namespace="com.team404.freeboard.mapper.FreeBoardMapper">
-
+	
 	<insert id="regist">
-		insert into FREEBOARD (bno, title, writer, content)
-		values(freeboard_seq.nextval, #{title}, #{writer}, #{content})
+		insert into FREEBOARD(bno, title, writer, content)
+		values(FREEBOARD_SEQ.nextval, #{title}, #{writer}, #{content} )
 	</insert>
-
-	<!-- resultType 풀경로 였느아 마이바티스 -->
+	
+	<!-- 동적쿼리구문의 조건에는 map의 키값이나 vo의 setter 값의 이름이 전달됩니다 -->
 	<select id="getList" resultType="FreeBoardVO">
-		select * from freeboard order by bno desc
-	</select>
+		<![CDATA[  
+		select *
+		from (
+		    select rownum as rn,
+		           a.*
+		    from (select *
+		          from FREEBOARD
+		          	]]>
+		          	
+		          	<if test="searchType=='title'">where title like '%'||#{searchName}||'%'</if>
+		          	<if test="searchType=='writer'">where writer like'%'||#{searchName}||'%'</if>
+		          	<if test="searchType=='content'">where content like '%'||#{searchName}||'%'</if>
+		          	<if test="searchType=='titcont'">where title like '%'||#{searchName}||'%'or content like '%'|| #{searchName}||'%'</if>
+		          	<if test="searchType==null or searchType=='' ">where 1 = 1 </if>
+		      <!-- 
+		          <choose>
+		          	<when test=""></when>
+		          	<when test=""></when>
+		          	<otherwise></otherwise>
+		          </choose>
+		           -->
 
-	<select id="getContent" resultType="FreeBoardVO">
-		select * from freeboard where bno = #{bno}
+		  
+		  <![CDATA[         
+		          order by bno desc) a
+		      )
+		where rn > (#{pageNum}-1) * #{amount} and rn <= #{pageNum} * #{amount}
+		]]>
 	</select>
 	
-	<update id="update">
-	update freeboard 
-		SET writer = #{writer} ,
-		title=#{title},
-		content=#{content},
-		updatedate = sysdate
-	where bno = #{bno} 
-	</update>
+	<select id="getTotal" resultType="int">
+		select count(*) as total from FREEBOARD
+		<if test="searchType=='title'">where title like '%'||#{searchName}||'%'</if>
+       	<if test="searchType=='writer'">where writer like'%'||#{searchName}||'%'</if>
+       	<if test="searchType=='content'">where content like '%'||#{searchName}||'%'</if>
+       	<if test="searchType=='titcont'">where title like '%'||#{searchName}||'%'or content like '%'|| #{searchName}||'%'</if>
+       	<if test="searchType==null or searchType=='' ">where 1 = 1 </if>
+		     
+	</select>
 	
+	<select id="getContent" resultType="FreeBoardVO">
+		select * from FREEBOARD where bno = #{bno}
+	</select>	
+
+	<update id="update">
+		update FREEBOARD 
+		set writer = #{writer}, 
+			title = #{title}, 
+			content = #{content}, 
+			updatedate = sysdate 
+		where bno = #{bno}
+	</update>
+
 	<delete id="delete">
-		delete from freeboard where bno = #{bno} 
+		delete from FREEBOARD where bno = #{bno}
 	</delete>
 
-</mapper>
 
+
+
+</mapper>

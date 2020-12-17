@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	aaa 파일입니다.
-	내가 정의하는 형태로 사용할 파일~~
+	aaa파일입니다.
+	내가 정의하는 형태로 사용할 파일~~ 
 </body>
 </html>

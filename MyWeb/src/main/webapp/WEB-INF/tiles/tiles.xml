@@ -2,11 +2,10 @@
 <!DOCTYPE tiles-definitions PUBLIC
   "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
   "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
-
+ 
 <!-- 타일즈 문서 선언 -->
 <tiles-definitions>
-
-	<!--template 은 실제 파일 명 -->
+	
 	<!-- 1.타일즈 파일이 가져야하는 layout을 정의(단, 공통화면 */* 보다 위에 위치해야 합니다. -->
 	<definition name="baseDefault" template="/WEB-INF/tiles/templateDefault.jsp">
 		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
