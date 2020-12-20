@@ -190,7 +190,7 @@
 		    <version>3.0.8</version>
 		</dependency>
 		
-		<!-- jackson-databind 객체를 json 형으로 변형해주는 라이브러리(REST API) 반드시 필요 -->
+		<!-- jackson-databind 객체를 -> json 형으로 변형해주는 라이브러리(REST API) 반드시 필요 -->
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>

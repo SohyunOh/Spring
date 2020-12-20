@@ -35,7 +35,7 @@ public class RestBasicController {
 		return new FreeBoardVO(10, "헬로", "테스트", "테스트", null, null);
 	}
 	
-	//값을 받고 객체형태로 반환
+	//값을 받고 객체형태로 반환A
 	//get방식에서는 requestParam읋 필수값을 지정해줄수 있습니다.
 	//http://localhost:8282/myweb/getCollection?bno=1
 	@GetMapping("/getCollection")
@@ -73,7 +73,7 @@ public class RestBasicController {
 	}
 	
 	
-	//post 형식의 Hson형식의 값을 받음, 객체로 반환
+	//post 형식의 Json형식의 값을 받음, 객체로 반환
 	//1. 화면에서 json 형식으로넘어올때 데이터를 @RequestBody 어노테이션으로 맵핑
 	//2.화면에서는 데이터보낼 때 Content-Type을 선언해서 제이터의 유형을 알려줘야합니다
 	@PostMapping("/getJson")
