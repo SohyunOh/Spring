@@ -3,6 +3,7 @@ package com.team404.controller;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -76,6 +77,10 @@ public class RestBasicController {
 	//post 형식의 Json형식의 값을 받음, 객체로 반환
 	//1. 화면에서 json 형식으로넘어올때 데이터를 @RequestBody 어노테이션으로 맵핑
 	//2.화면에서는 데이터보낼 때 Content-Type을 선언해서 제이터의 유형을 알려줘야합니다
+	//http://localhost:8282/myweb/getJson
+	
+	//크로스도메인정책 - 서버가 다른 경우 , 스프링은 기본적으로 받아주지 않는데, 이런 요청을 허용시키는 옵션입니다
+	@CrossOrigin(origins = "http://127.0.0.1:5502")//@CrossOrigin(origins="*")//어떵 요청이든 허용-- 전세계 오픈
 	@PostMapping("/getJson")
 	public ArrayList<FreeBoardVO> getJson(@RequestBody FreeBoardVO vo){
 		

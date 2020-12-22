@@ -7,5 +7,6 @@
 <configuration>
  	<typeAliases>
 		<typeAlias type="com.team404.command.FreeBoardVO" alias="FreeBoardVO"/>
+		<typeAlias type="com.team404.command.ReplyVO" alias="ReplyVO"/>
  	</typeAliases>   
 </configuration>
