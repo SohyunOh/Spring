@@ -1,6 +1,7 @@
 package com.team404.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -37,7 +38,7 @@ public class ReplyController {
 	
 	//목록요청
 	@GetMapping("/getList/{bno}/{pageNum}")
-	public ArrayList<ReplyVO> getList(@PathVariable("bno") int bno ,
+	public HashMap<String, Object> getList(@PathVariable("bno") int bno ,
 									@PathVariable("pageNum") int pageNum) {
 		
 //		System.out.println(bno);
@@ -52,12 +53,18 @@ public class ReplyController {
 		ArrayList<ReplyVO> list = replyService.getList(bno, cri);
 
 		//게시글에 대한 total
+		int total = replyService.getTotal(bno);
 		
+
+		System.out.println(list.size());
+		System.out.println(total);
 		
 		//해쉬맵에 키 value로 저장해서 반환
-		
-		
-		return list;
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("list", list);
+		map.put("total", total);
+				
+		return map;
 	}
 	
 	//수정

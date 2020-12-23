@@ -14,7 +14,7 @@
                             <div class="input-group"><!--input2탭의 input-addon을 가져온다 -->
                                 <input type="text" class="form-control" id="userId" placeholder="아이디를 (영문포함 4~12자 이상)">
                                 <div class="input-group-addon">
-                                    <button type="button" class="btn btn-primary">아이디중복체크</button>
+                                    <button type="button" class="btn btn-primary" id="IdcheckBtn">아이디중복체크</button>
                                 </div>
                             </div>
                             <span id="msgId"></span><!--자바스크립트에서 추가-->
@@ -66,12 +66,12 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" id="addrZipNum" placeholder="우편번호" readonly>
                                 <div class="input-group-addon">
-                                    <button type="button" class="btn btn-primary">주소찾기</button>
+                                    <button type="button" class="btn btn-primary" onclick="goPopup()">주소찾기</button>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="addrBasic" placeholder="기본주소">
+                            <input type="text" class="form-control" id="addrBasic"  placeholder="기본주소">
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" id="addrDetail" placeholder="상세주소">
@@ -132,3 +132,8 @@
             }
         }        
     </script>
+
+
+
+
+
