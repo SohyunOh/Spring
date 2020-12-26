@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- dtd라는 파일을 참조하는 마이바티스 문서라는 것을 선언 -->
+
+
+<mapper namespace="com.team404.user.mapper.UserMapper">
+
+		<!-- 중복체크 -->
+	<select id="idCheck" resultType="int">
+		select count(*) as result from users where userId = #{userId}
+	</select>
+	
+	<!-- 가입 -->
+	<insert id="join">
+		insert into users(userId, userPw, userName, userPhone1, userPhone2, userEmail1, userEmail2, addrBasic, addrDetail, addrZipNum)
+		values(#{userId}, #{userPw}, #{userName}, #{userPhone1}, #{userPhone2}, #{userEmail1}, #{userEmail2}, #{addrBasic}, #{addrDetail}, #{addrZipNum})
+	</insert>	
+	
+	
+	<!-- 로그인 -->
+	<select id="login" resultType="int" parameterType="UserVO">
+	SELECT * form users WHERE userId = #{userId} and userPw = #{userPw}
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>

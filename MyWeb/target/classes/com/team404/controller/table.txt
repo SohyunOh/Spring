@@ -37,8 +37,9 @@ CREATE TABLE users(
     userEmail2 varchar2(50) ,
     addrBasic varchar2(50) ,
     addrDetail varchar2(50) ,
-    addrZipiNum varchar2(50) ,
+    addrZipNum varchar2(50) ,
     regdate date DEFAULT sysdate
 );
 
 alter table users add CONSTRAINT userId_pk PRIMARY KEY (userId);
+

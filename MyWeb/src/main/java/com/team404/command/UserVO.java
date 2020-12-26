@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserVO {
 	
-	private String userid;
+	private String userId;
 	private String userPw;
 	private String userName;
 	private String userPhone1;
@@ -20,7 +20,7 @@ public class UserVO {
 	private String userEmail2;
 	private String addrBasic;
 	private String addrDetail;
-	private String addrZipiNum;
+	private String addrZipNum;
 	private Timestamp regdate;
 	
 	
