@@ -29,6 +29,7 @@
 		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="true"/>
 		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
 		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\612th\Desktop\오소현.zip"/>
 			<item value="C:\Users\612th\Desktop\MyWeb(1216-22).zip"/>
 			<item value="C:\Users\612th\Desktop\MyWeb(1216-17).zip"/>
 			<item value="C:\Users\612th\Desktop\MyWeb(Lombok).zip"/>

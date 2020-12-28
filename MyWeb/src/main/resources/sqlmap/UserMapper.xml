@@ -17,16 +17,55 @@
 	<insert id="join">
 		insert into users(userId, userPw, userName, userPhone1, userPhone2, userEmail1, userEmail2, addrBasic, addrDetail, addrZipNum)
 		values(#{userId}, #{userPw}, #{userName}, #{userPhone1}, #{userPhone2}, #{userEmail1}, #{userEmail2}, #{addrBasic}, #{addrDetail}, #{addrZipNum})
-	</insert>	
+	</insert>
 	
 	
 	<!-- 로그인 -->
-	<select id="login" resultType="int" parameterType="UserVO">
-	SELECT * form users WHERE userId = #{userId} and userPw = #{userPw}
+	<!-- resultType 은 경로 : 마이바티스로 줄여서 사용(설정필요)-->
+	<select id="login" resultType="UserVO" >
+		SELECT * from users WHERE userId = #{userId} and userPw = #{userPw}
 	</select>
 	
+	<!-- 마이페이지 회원정보 -->
+	<!-- 조인 결과로 1:N 관계의 형태를 map으로 처리하는 방식에서 resultMap 속성을 이용 -->
+	<select id="getInfo" resultMap="usersInfo">
+		SELECT userid,
+	        username,
+	        userphone1,
+	        u.userphone2,
+	        useremail1,
+	        useremail2,
+	        addrbasic,
+	        addrdetail,
+	        addrzipnum,
+	        f.bno,
+	        f.title,
+	        f.regdate
+		FROM users u LEFT  OUTER  JOIN freeboard f
+		on u.userid = f.writer
+		where u.userid = #{userId}
+		ORDER BY f.bno DESC
+    </select>
 	
-	
+	<!-- type속성에는 실제클래스의 경로, id속성에는 위에서 자정한  resultMap의 이름 -->
+	<!-- property속성에는 VO객체의 변수명, column에는 DB의 컬럼명 -->
+      <resultMap type="UserVO" id="usersInfo">
+        <result property="userId" column="USERID"/>
+        <result property="userName" column="USERNAME"/>
+        <result property="userPhone1" column="USERPHONE1"/>
+        <result property="userPhone2" column="USERPHONE2"/>
+        <result property="userEmail1" column="USEREMAIL1"/>
+        <result property="userEmail2" column="USEREMAIL2"/>
+        <result property="addrBasic" column="ADDRBASIC"/>
+        <result property="addrDetail" column="ADDRDETAIL"/>
+        <result property="addrZipNum" column="ADDRZIPNUM"/>
+        <collection property="list" resultMap="userBoardList"/>
+    </resultMap>
+    <resultMap type="FreeBoardVO" id="userBoardList">
+        <result property="bno" column="BNO"/>
+        <result property="title" column="TITLE"/>
+        <result property="regdate" column="REGDATE"/>
+    </resultMap>
 	
 	
 	

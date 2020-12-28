@@ -8,20 +8,21 @@
                     <div class="titlebox">
                         	로그인
                     </div>
-                    <form action="login" method="get">
+                    <form action="login" method="post" id="loginForm" >
                         <div class="form-group"><!--사용자클래스선언-->
                             <label for="id">아이디</label>
-                            <input type="text" class="form-control" id="id" name="userId" placeholder="아이디">
+                            <input type="text" class="form-control" id="userId" name="userId" placeholder="아이디" required>
                          </div>
                          <div class="form-group"><!--사용자클래스선언-->
                             <label for="id">비밀번호</label>
-                            <input type="password" class="form-control" id="id" name="userPw" placeholder="비밀번호">
-                         </div>
+                            <input type="password" class="form-control" id="userPw" name="userPw" placeholder="비밀번호" required>
+                            </div>
                          <div class="form-group">
-                            <button type="submit" class="btn btn-info btn-block">로그인</button>
+                            <button type="submit" class="btn btn-info btn-block" id="loginBtn" >로그인</button>
                             <button type="button" class="btn btn-primary btn-block" onclick="locaion.href=userJoin">회원가입</button>
                          </div>
                     </form>   
+                    <span>${msg }</span>
                 </div>
             </div>
         </div>
@@ -33,7 +34,27 @@
     	if(msg != "") {
     		alert(msg);
     	}
+    	
+    	
+/*     	$("#loginBtn").click(function() {
+    	      if( $("#id").val() === "" || $("#pw").val() === "" ){
+    	         alert("아이디와 비밀번호를 입력하세요")
+    	      }else{
+    	         $("#loginForm").submit();
+    	      }
+    	   }) */
+    	
+    	
+    	
     </script>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

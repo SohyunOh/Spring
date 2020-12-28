@@ -14,7 +14,7 @@
                         <tbody class="t-control">
                             <tr>
                                 <td class="t-title">NAME</td>
-                                <td><input class="form-control input-sm" name="writer"><span id="msgId"></span></td>
+                                <td><input class="form-control input-sm" name="writer" value="${sessionScope.userVO.userId }" readonly><span id="msgId"></span></td>
                             </tr>
                             <tr>
                                 <td class="t-title">TITLE</td>

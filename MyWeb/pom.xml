@@ -44,6 +44,16 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>	
 		
+		<!-- AOP 개념을 자바클래스에 적용해주는 라이브러리 -->
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjweaver</artifactId>
+		    <version>${org.aspectj-version}</version>
+		    <scope>runtime</scope>
+		</dependency>
+		
+		
+		
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
