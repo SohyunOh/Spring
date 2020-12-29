@@ -43,3 +43,19 @@ CREATE TABLE users(
 
 alter table users add CONSTRAINT userId_pk PRIMARY KEY (userId);
 
+==========================================
+
+-- 작성자 , 내용, 이미지정보 (업로드경로, 변경된 파일이름, 실제파일이름) , 등록일
+
+CREATE TABLE SNSBOARD (
+    bno NUMBER(10) not null,
+    writer VARCHAR2(50) not null,
+    content VARCHAR2(2000) not null,
+    uploadpath VARCHAR2(50) not null,
+    filename VARCHAR2(50) not null,
+    filerealname VARCHAR2(50) not null,
+    regdate date default sysdate
+);
+
+alter table SNSBOARD add CONSTRAINT snsboard_pk PRIMARY KEY (bno);
+CREATE SEQUENCE Update_seq INCREMENT BY 1 START WITH 1 NOCACHE;

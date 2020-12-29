@@ -31,5 +31,13 @@
 	<!-- 
 	<beans:bean id="service" class="com.simple.service.ScoreServiceImpl" />
 	 -->
+	 
+	 <!-- 파일업로드 설정 -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 최대업로드 가능한 크기 -->
+		<beans:property name="maxUploadSize" value="25428800"/>
+		<!-- 인코딩설정 -->
+		<beans:property name="defaultEncoding" value="UTF-8"></beans:property>
+	</beans:bean>
 	
 </beans:beans>

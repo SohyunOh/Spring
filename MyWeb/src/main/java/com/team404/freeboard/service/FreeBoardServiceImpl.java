@@ -28,12 +28,13 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 
 	@Override
 	public ArrayList<FreeBoardVO> getList(Criteria cri) {
+	
 		return freeBoardMapper.getList(cri);
 	}	
 	
 	@Override
 	public int getTotal(Criteria cri) {
-		
+
 		return freeBoardMapper.getTotal(cri);
 	}
 
