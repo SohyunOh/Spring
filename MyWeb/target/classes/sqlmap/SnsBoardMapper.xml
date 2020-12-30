@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- dtd라는 파일을 참조하는 마이바티스 문서라는 것을 선언 -->
+
+<mapper namespace="com.team404.snsboard.mapper.SnsBoardMapper">
+
+	<insert id="insertFile">
+		insert into SNSBOARD(bno, writer, content, uploadpath, fileloca, filename, filerealname)
+		values (snsboard_seq.nextval,#{writer},#{content}, #{uploadPath},#{fileLoca} ,#{fileName},#{fileRealName})
+	</insert>
+
+	<select id="getList" resultType="SnsBoardVO">
+		select * from SNSBOARD ORDER by bno desc
+	</select>
+
+
+</mapper>

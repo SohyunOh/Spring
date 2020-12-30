@@ -9,5 +9,6 @@
 		<typeAlias type="com.team404.command.FreeBoardVO" alias="FreeBoardVO"/>
 		<typeAlias type="com.team404.command.ReplyVO" alias="ReplyVO"/>
 		<typeAlias type="com.team404.command.UserVO" alias="UserVO"/>
+		<typeAlias type="com.team404.command.SnsBoardVO" alias="SnsBoardVO"/>
  	</typeAliases>   
 </configuration>

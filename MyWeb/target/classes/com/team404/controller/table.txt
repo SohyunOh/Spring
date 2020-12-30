@@ -38,7 +38,7 @@ CREATE TABLE users(
     addrBasic varchar2(50) ,
     addrDetail varchar2(50) ,
     addrZipNum varchar2(50) ,
-    regdate date DEFAULT sysdate
+    regdate date DEFAULT sysdate,
 );
 
 alter table users add CONSTRAINT userId_pk PRIMARY KEY (userId);
@@ -50,12 +50,13 @@ alter table users add CONSTRAINT userId_pk PRIMARY KEY (userId);
 CREATE TABLE SNSBOARD (
     bno NUMBER(10) not null,
     writer VARCHAR2(50) not null,
-    content VARCHAR2(2000) not null,
+    content VARCHAR2(2000),
     uploadpath VARCHAR2(50) not null,
+	fileloca VARCHAR2(50) not null,
     filename VARCHAR2(50) not null,
     filerealname VARCHAR2(50) not null,
     regdate date default sysdate
 );
 
 alter table SNSBOARD add CONSTRAINT snsboard_pk PRIMARY KEY (bno);
-CREATE SEQUENCE Update_seq INCREMENT BY 1 START WITH 1 NOCACHE;
+CREATE SEQUENCE snsboard_seq INCREMENT BY 1 START WITH 1 NOCACHE;
